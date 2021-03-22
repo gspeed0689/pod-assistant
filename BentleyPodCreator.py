@@ -1,6 +1,6 @@
 from glob import glob as G
 from xml.dom import minidom as xdmd
-import argparse
+import argparse, os
 
 settingsDictionary = {"combine": True,
                       "scale by": "1.0000000000000000",
@@ -88,7 +88,7 @@ def cmdLineArgs():
 	# parser.add_argument("-rgb", "exclude rgb", default="False")
 	# parser.add_argument("-ri", "rescale intensities", default="False")
 	args = parser.parse_args()
-	dir = args.directory + "\\"
+	dir = args.directory + os.sep
 	ptCloudType = args.type
 	main(dir, ptCloudType)
 	
